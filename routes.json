@@ -1,0 +1,45 @@
+{
+  "routes": [
+    {
+      "route": "/profile",
+      "allowedRoles": ["authenticated"],
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/admin",
+      "allowedRoles": ["administrator"],
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/login",
+      "serve": "/.auth/login/aad"
+    },
+    {
+      "route": "/.auth/login/facebook",
+      "statusCode": "404"
+    },
+    {
+      "route": "/.auth/login/github",
+      "statusCode": "404"
+    },
+    {
+      "route": "/.auth/login/google",
+      "statusCode": "404"
+    },
+    {
+      "route": "/.auth/login/twitter",
+      "statusCode": "404"
+    },
+    {
+      "route": "/logout",
+      "serve": "/.auth/logout"
+    },
+    {
+      "route": "/*",
+      "serve": "/index.html",
+      "statusCode": 200
+    }
+  ]
+}
